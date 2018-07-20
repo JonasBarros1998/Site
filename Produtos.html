@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Page Title</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css">
+
+  <link rel="stylesheet" type="text/css" media="screen" href="Assets/styles/Produtos.css" />
+</head>
+
+<body>
+  <nav class="MargemMenu">
+    <ul class="Menu MenuDireito">
+      <li class="itemMenu ItemDireito">
+        <a href="#">Minha Conta</a>
+      </li>
+      <li class=" itemMenu ItemDireito">
+        <a href="#">Login</a>
+      </li>
+    </ul>
+  </nav>
+
+  <ul class="Menu MenuPrincipal">
+    <li class="itemMenu LogoTipo">
+      <a href="Home.html">
+      <img src="Imagens\Marvel-Logo.png" alt="Logo Marvel" class="imgLogo">
+    </a>
+    </li>
+
+    <li class="itemMenu">
+      <a href="#">
+        <i class="fab fa-facebook-square Icone"></i>
+      </a>
+    </li>
+
+    <li class="itemMenu">
+      <a href="#">
+        <i class="fab fa-twitter-square Icone"></i>
+      </a>
+    </li>
+
+    <li class="itemMenu">
+      <a href="#">
+        <i class="fab fa-instagram Icone"></i>
+      </a>
+    </li>
+    <li class="MenuPrincipal-item-direito itemMenu">
+      <i class="fas fa-cart-plus Icone"></i>
+    </li>
+
+    <li class="MenuPrincipal-item-direito itemMenu">
+      <input type="text" class="textBox" placeholder="Busque aqui...">
+      <i class="fas fa-search"></i>
+    </li>
+  </ul>
+
+  <div class="menuLojaResponsivo">
+    <a href="#">
+      <i class="fas fa-cart-plus Icone"></i>
+    </a>
+    <a href="#" class="BotaoAbrirMenu">
+      <i class="fas fa-align-justify"></i>
+    </a>
+  </div>
+
+  <ul class="MenuLoja">
+    <li class="MenuLoja-item itemMenu">
+      <a href="#">SHOP</a>
+    </li>
+
+    <li class="MenuLoja-item  itemMenu">
+      <a href="#">New!</a>
+    </li>
+
+    <li class="MenuLoja-item  itemMenu">
+      <a href="#">Comics</a>
+    </li>
+
+    <li class="MenuLoja-item  itemMenu">
+      <a href="#">Characters</a>
+    </li>
+
+    <li class="MenuLoja-item  itemMenu">
+      <a href="#">Clothes</a>
+    </li>
+
+    <li class="MenuLoja-item  itemMenu">
+      <a href="#">Acessorios</a>
+    </li>
+    <li class="MenuLoja-item  itemMenu">
+      <a href="#">Home Decor</a>
+    </li>
+
+    <li class="MenuLoja-item  itemMenu">
+      <a href="#">Entertainment</a>
+    </li>
+
+    <li class="MenuLoja-item  itemMenu Colections ">
+      <a href="#">Colections</a>
+    </li>
+
+    <li class="MenuLoja-item itemMenu Sales ">
+      <a href="#">Sales</a>
+    </li>
+  </ul>
+
+  <div class="produto-detalhes">
+    <div class="produtos-Informacoes">
+      <div class="produtos-Informacoes-Descricao">
+        <img src="Imagens/Hq/AquamanUnderWorld.jpg" class="imagem-Produto">
+        <div class="descricaoProduto">
+          <h3 class="titulo-Produto"> BLUE(2017) #23</h3>
+          <p>
+            <strong>Publicado: </strong>Março 2018</p>
+          <p>
+            <strong>Avaliação: </strong>nota 5,7</p>
+          <p>
+            <strong>Autor:</strong> Cullen Bunn</p>
+          <p>
+            <strong>Ilustrador:</strong> Jorge Molina</p>
+        </div>
+      </div>
+
+      <div class="produtos-Informacoes-Preco">
+        <p>Leia online em seu smartphone,
+          <br> ou compre impresso</p>
+        <h3 class="preco">R$ 4,99</h3>
+        <button class="AddCarrinho">Add ao carrinho</button>
+      </div>
+    </div>
+  </div>
+
+  <h3 class="MaisInformacoes">MAIS INFORMAÇÕES</h3>
+
+  <ul class="listaAbas">
+    <!--tab-list, tab-control = AbaControle-->
+    <li class="active itemAbas">
+      <a class="AbaControle" href="#tab-1">
+        <i class="[ fas fa-chevron-circle-down ] IconeTab"></i>
+        <h3 class="Titulo-Tab">Creditos</h3>
+        </div>
+    </li>
+
+    <li class="itemAbas">
+      <a class="AbaControle" href="#tab-2">
+        <i class="[ fas fa-info-circle ]  IconeTab"></i>
+        <h3 class="Titulo-Tab">Mais Informações</h3>
+      </a>
+    </li>
+
+    <li class="itemAbas">
+      <a class="AbaControle" href="#tab-3">
+        <i class="[ fas fa-history ]  IconeTab"></i>
+        <h3 class="Titulo-Tab">Stores</h3>
+      </a>
+    </li>
+  </ul>
+
+  <div class="aba-Painel active" id="tab-1">
+    <p class="texto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate sequi deserunt enim. Quas labore modi natus dolorum
+      aut consequuntur, quos, accusamus esse voluptates expedita harum! Molestias asperiores accusamus velit laborum! Lorem
+      ipsum dolor, sit amet consectetur adipisicing elit. Unde laboriosam obcaecati blanditiis maiores distinctio impedit
+      sed. Fuga dignissimos porro quidem quos adipisci autem, dolorem cupiditate. Fugiat ex deserunt laborum ad.</p>
+  </div>
+
+  <div class="aba-Painel" id="tab-2">
+    <p class="texto">Free postage and packaging on all orders! Due to the perishable nature of our product, we regret that we are unable to
+      ship items internationally at this time. If you would like to find out when Monsieur Pigeon is coming to your country,
+      please sign up for the mailing list.</p>
+  </div>
+
+  <div class="aba-Painel" id="tab-3">
+    <p class="texto">Free postage and packaging on all orders! Due to the perishable nature of our product, we regret that we are unable to
+      ship items internationally at this time. If you would like to find out when Monsieur Pigeon is coming to your country,
+      please sign up for the mailing list. Free postage and packaging on all orders! Due to the perishable nature of our
+      product, we regret that we are unable to ship items internationally at this time. If you would like to find out when
+      Monsieur Pigeon is coming to your country, please sign up for the mailing list.</p>
+  </div>
+  
+  <script src="Assets/scripts/jquery-3.3.1.js"></script>
+  <script src="Assets/scripts/Produtos.js"></script>
+  <script src="Assets/scripts/Home.js"></script>
+
+</body>
+</html>
