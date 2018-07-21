@@ -156,3 +156,53 @@ $('.Filtro').on('click', '.Series', function(e){
   .slideToggle();
 });
 
+let num = 0;
+/*Ocultar as imagens que ficam superior ao decima imagem*/
+function ocultarImagens() {
+    let contar = 20;
+    for (let i = 0; i < contar; i++) {
+        if (i > 10 || i == 10) {
+            $('.produtos-Quadrinho').eq(i).css({
+                display: 'none'
+            });
+        }
+    }
+}
+ocultarImagens();
+
+/*Criei um media query, para que ao diminuir a tela do navagador (com as outras imagens ocultas),
+o total de imagens que o usario vai ver serão 8, e não 10 imagens, 
+porque com 10 imagens a ultima fileira de imagens vai ficar incompleta*/
+function mediaSize() {
+    let contarImg = 10;
+    if (window.matchMedia('(max-width: 960px)').matches) {
+        for (let a = 0; a < contarImg; a++) {
+            if ((a > 8 || a == 8) && num == 0) {    //Para saber se o botao esta ativo ou não
+                /*Oculta as duas iamgens que ficam sobrando em uma fileira de 4 imagens cada*/
+                $('.produtos-Quadrinho').eq(a).css({
+                    display: 'none'
+                });
+            }
+        }   
+    }
+    else{
+        /*Caso a tela for mais que 960px, as imagens voltam a aparecer*/
+        for (let a = 0; a < contarImg; a++) {       
+          $('.produtos-Quadrinho').eq(a).css({
+              display: 'block'
+          });
+        }
+    }
+}
+mediaSize();
+window.addEventListener('resize', mediaSize, false);
+
+/*carregar mais imagens*/
+$('.Ativar').on('click', function() {
+    $('.produtos-Quadrinho').fadeIn('slow');
+    num++;
+    console.log(num);
+});
+
+
+
