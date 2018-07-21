@@ -13,6 +13,7 @@ ul, li{
 }
 a{
     text-decoration: none;
+    color: black;
 }
 /*Fim, reset da pagina*/
 
@@ -208,7 +209,7 @@ a{
   font-size: 0.8em;
   margin: 0 0 0 0.7em;
   padding: 0.5em 0;
-  color: black;
+  color: rgb(255, 0, 0);
   cursor: pointer;
 }
 
@@ -220,27 +221,44 @@ a{
   flex-flow: row wrap;
   justify-content: flex-start;
   width: 100%;
-  height: 100%;
+  height: auto;
+  overflow: hidden;
 }
 
 .produtos{
   display: flex;
   flex-wrap: wrap;
-  width: 79.3333%;
-  margin: 3px;
-overflow: hidden;	
+  width: 83%;
+  height: 100%;
+  margin: 0 auto 0 0;
+  overflow: hidden;
 }
 
-.produtos 
 .produtos-Quadrinho{
-  width:18%;
+  width:17%;
   height: auto;
-  margin: 0 2% 4% 0;
+  margin: 2em 0.5em 1em 0.8em;
 }
 
 .produto-Quadrinhos-Imagem{width: 100%;}
 
-/*ESTILOS DE TODOS OS produtos-QuadrinhoS*/
+.Ativar{
+  border: 1px solid black;
+  margin: 1em auto;
+  width: 15%;
+  text-align: center;
+  color: rgb(58, 58, 58);
+  font-weight: bold;
+  padding: 0.6em 1em 0.6em 1em;
+  transform: skew(-20deg,0);
+}
+.Ativar:active{
+  background-color: #747474;
+  color: white;
+  border: 1px solid #747474;
+}
+
+/*ESTILOS DE TODOS OS produtos-Quadrinho*/
 .NomeQuandrinho{
   font-weight: bold;
   font-size: 1em;
@@ -276,7 +294,6 @@ overflow: hidden;
 
 .tituloRodape{
   border-bottom: 1px solid #747474;
-
   color: black;
 }
 
@@ -286,7 +303,6 @@ overflow: hidden;
 .RedesSociais{
   width: 22%;
   padding: 0 0 0 0.5em;
-
 }
 
 .IconeRodape{
@@ -311,9 +327,7 @@ overflow: hidden;
     margin: 0 2% 4% auto;
   }
 
-  .Filtro{
-    width: 20%;
-  }
+  .Filtro{width: 20%;}
 
   .Sales a{display: none;}
 
@@ -346,7 +360,9 @@ overflow: hidden;
 
 /*icone do Carrrinho de compras*/
   .fa-cart-plus, 
-  .fa-cart-plus:hover{color: #fff;}
+  .fa-cart-plus:hover{
+    color: #fff;
+  }
 
   .fa-cart-plus{
     float: right;
@@ -401,13 +417,18 @@ overflow: hidden;
   width: 100%;
 }
 
-.slide-Visualizar {height: 350px;}
+.slide-Visualizar {
+  height: 350px;
+}
 
    .produtos 
    .produtos-Quadrinho{
     width:30%;
     height: auto;
     margin: 1em auto;
+  }
+  .Ativar{
+    width: 25%;
   }
 
   .Links-Rodape{
@@ -450,6 +471,10 @@ overflow: hidden;
     width: 10em;
   }
 
+  .Ativar{
+    width: 37%;
+  }
+
   .Links-Rodape{margin: 0.5em 0 1em 0;}
 }
 
@@ -465,6 +490,10 @@ overflow: hidden;
     width:60%;
     height: auto;
     margin: 1em auto;
+  }
+
+  .Ativar{
+    width: 50%;
   }
 
   .Categoria, 
