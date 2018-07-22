@@ -107,7 +107,6 @@ a{
   padding: 0.3em 0.6em 0.3em 0.6em;
 }
 
-
 .MenuLoja-item a{color: white;}
 
  .MenuLoja-item a:hover, a:active{
@@ -156,9 +155,11 @@ a{
 .active, 
 .slide-btn:hover {
   color: #ff0000;
-  cursor: pointer;}
+  cursor: pointer;
+}
 
-/*ESCOLHA O SEU*/
+
+/*FRASE: ESCOLHA O SEU*/
 .BlocoTitulo{
   margin: 0 0.2em 1em 0;
   width: 20%;
@@ -251,6 +252,7 @@ a{
   font-weight: bold;
   padding: 0.6em 1em 0.6em 1em;
   transform: skew(-20deg,0);
+  cursor: pointer;
 }
 .Ativar:active{
   background-color: #747474;
@@ -315,6 +317,12 @@ a{
   .MenuPrincipal{
     width: 100%;
   }
+  .MenuLoja-item{ 
+    padding: 0.3em 0.8em 0.3em 0.8em;
+  }
+  .Colections{
+    display: none;
+  }
 
   .produtos{
     width: 80%;
@@ -328,8 +336,6 @@ a{
   }
 
   .Filtro{width: 20%;}
-
-  .Sales a{display: none;}
 
   .slide{width: 100%;}
 
