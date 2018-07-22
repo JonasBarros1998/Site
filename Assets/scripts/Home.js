@@ -20,7 +20,7 @@ function main() {
 main();
 
 
-/*SLIDER DA PAGINA*/
+/*SLIDER*/
 $('.slide').each(function () {
   let $this = $(this);
   let grupoSlide = $this.find('.slide-Grupo');
@@ -38,25 +38,26 @@ $('.slide').each(function () {
     if (grupoSlide.is(':animated') || indiceAtual === newIndex) {
       return;
     }
-      botaoArray[indiceAtual].removeClass('active');
-      botaoArray[newIndex].addClass('active');
+    botaoArray[indiceAtual].removeClass('active');
+    botaoArray[newIndex].addClass('active');
 
-    //aqui defini para onde o slide vai o slide
+    //aqui se define para onde o slide vai o slide
     if (newIndex > indiceAtual) {
-      //direita para esquerda
+      //da direita para esquerda
       slideEsquerda = '100%';
       animacaoEsquerda = '-100%';
 
     } else {
-      //esquerda para direita
+      //da esquerda para direita
       slideEsquerda = '-100%';
       animacaoEsquerda = '100%';
     }
 
-    slide.eq(newIndex).css({ left: slideEsquerda, display: 'block' }); //sempre o slide mostrado na tela vai ser display block
+    //sempre o slide mostrado na tela vai ser atribuido como display block
+    slide.eq(newIndex).css({ left: slideEsquerda, display: 'block' });
 
     grupoSlide.animate({ left: animacaoEsquerda }, function () {
-      slide.eq(indiceAtual).css({ display: 'none' }); //O slide que não são mostrado na tela acultamos eles
+      slide.eq(indiceAtual).css({ display: 'none' }); //O slide que não são mostrado na tela será oculto
       slide.eq(newIndex).css({ left: 0 }); //saber o valor atual do newIndex, e passar left 0
       grupoSlide.css({ left: 0 });
       indiceAtual = newIndex;
@@ -78,7 +79,7 @@ $('.slide').each(function () {
   }
   $.each(slide, function (index) {
     let botao = $('<button type="button" class="slide-btn">&bull;</button>');
-    if (index === indiceAtual) {//&bull;
+    if (index === indiceAtual) {
       botao.addClass('active');
     }
 
@@ -90,12 +91,16 @@ $('.slide').each(function () {
   avancar();
 });
 
+
 /*FILTRO DOS QUADRIHNOS*/
 (function () {
 
   let quadrinhos = $('.ContainerFlex .produtos-Quadrinho'); //pegando cada div com os quadrinhos
-  let botao = $('.flitro-Botao'); //onde vou armazenar os botoes
-  armazenaTags = {}; //Criando o objeto para adicionar o array
+
+  //onde será armazenado os botoes
+  let botao = $('.flitro-Botao');
+
+  armazenaTags = {};
 
   //vai contar quantos produtos existem e adicionar em um array
   quadrinhos.each(function () {
@@ -108,14 +113,16 @@ $('.slide').each(function () {
         if (armazenaTags[nomeTag] == null) {
           armazenaTags[nomeTag] = [];
         }
-        armazenaTags[nomeTag].push($Hqs); //Armazenas os produtos em um array
+
+         //Armazenas os produtos em um array
+        armazenaTags[nomeTag].push($Hqs);
       });
     }
   });
 
   //Neste botão vai mostrar todos os produtos da loja
   $('<a/>', {
-    text: "MOSTRAR TUDO", 
+    text: "MOSTRAR TUDO",
     class: 'itemFiltro',
     click: function () {
       $(this).addClass('itemFiltro')
@@ -124,7 +131,7 @@ $('.slide').each(function () {
       quadrinhos.show();
     }
   }).appendTo(botao);
-  
+
 
   /*Para cada tag criada que esteja com o nome diferente vamos criar um botao*/
   $.each(armazenaTags, function (nomeTag) {
@@ -138,70 +145,71 @@ $('.slide').each(function () {
           .siblings()
           .removeClass('active');
 
-          quadrinhos
+        quadrinhos
           .hide()
           .filter(armazenaTags[nomeTag])
           .show();
       }
     }).appendTo(botao);
   });
-}()); //Fecha função anonima
+}()); //Fecha função
 
-//Criando o accordion do menu filtro
-$('.Filtro').on('click', '.Series', function(e){
+//Criando o accordion do menu de filtro
+$('.Filtro').on('click', '.Series', function (e) {
   e.preventDefault();
   $(this)
-  .next('.filtro-Series')
-  .not(':animated')
-  .slideToggle();
+    .next('.filtro-Series')
+    .not(':animated')
+    .slideToggle();
 });
 
-let num = 0;
-/*Ocultar as imagens que ficam superior ao decima imagem*/
+
+/*Ocultar as imagens que ficam superior a decima imagem*/
 function ocultarImagens() {
-    let contar = 20;
-    for (let i = 0; i < contar; i++) {
-        if (i > 10 || i == 10) {
-            $('.produtos-Quadrinho').eq(i).css({
-                display: 'none'
-            });
-        }
+  let contar = 20;
+  for (let i = 0; i < contar; i++) {
+    if (i > 10 || i == 10) {
+      $('.produtos-Quadrinho').eq(i).css({
+        display: 'none'
+      });
     }
+  }
 }
 ocultarImagens();
 
 /*Criei um media query, para que ao diminuir a tela do navagador (com as outras imagens ocultas),
-o total de imagens que o usario vai ver serão 8, e não 10 imagens, 
+o total de imagens que o usuario vai ver serão 8, e não 10 imagens, 
 porque com 10 imagens a ultima fileira de imagens vai ficar incompleta*/
+let num = 0;
 function mediaSize() {
-    let contarImg = 10;
-    if (window.matchMedia('(max-width: 960px)').matches) {
-        for (let a = 0; a < contarImg; a++) {
-            if ((a > 8 || a == 8) && num == 0) {    //Para saber se o botao esta ativo ou não
-                /*Oculta as duas iamgens que ficam sobrando em uma fileira de 4 imagens cada*/
-                $('.produtos-Quadrinho').eq(a).css({
-                    display: 'none'
-                });
-            }
-        }   
+  let contarImg = 10;
+  if (window.matchMedia('(max-width: 960px)').matches) {
+    for (let a = 0; a < contarImg; a++) {
+      if ((a > 8 || a == 8) && num == 0) {    //Para saber se o botao esta ativo ou não
+
+        /*Oculta as duas imagens que ficam sobrando em uma fileira de 4 imagens cada*/
+        $('.produtos-Quadrinho').eq(a).css({
+          display: 'none'
+        });
+      }
     }
-    else{
-        /*Caso a tela for mais que 960px, as imagens voltam a aparecer*/
-        for (let a = 0; a < contarImg; a++) {       
-          $('.produtos-Quadrinho').eq(a).css({
-              display: 'block'
-          });
-        }
+  }
+  else {
+    /*Caso a tela for mais que 960px, as imagens voltam a aparecer*/
+    for (let a = 0; a < contarImg; a++) {
+      $('.produtos-Quadrinho').eq(a).css({
+        display: 'block'
+      });
     }
+  }
 }
 mediaSize();
 window.addEventListener('resize', mediaSize, false);
 
-/*carregar mais imagens*/
-$('.Ativar').on('click', function() {
-    $('.produtos-Quadrinho').fadeIn('slow');
-    num++;
-    console.log(num);
+/*Ao click do botão, vai carregar mais imagens*/
+$('.Ativar').on('click', function () {
+  $('.produtos-Quadrinho').fadeIn('slow');
+  num++;
 });
 
 
