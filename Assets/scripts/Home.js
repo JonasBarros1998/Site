@@ -108,7 +108,7 @@ $('.slide').each(function () {
     var tags = $(this).data('tags');
 
     if (tags) {
-      tags.split(',').forEach(nomeTag => {
+      tags.split(',').forEach(function(nomeTag) {
 
         if (armazenaTags[nomeTag] == null) {
           armazenaTags[nomeTag] = [];
