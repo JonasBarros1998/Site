@@ -22,16 +22,16 @@ main();
 
 /*SLIDER*/
 $('.slide').each(function () {
-  let $this = $(this);
-  let grupoSlide = $this.find('.slide-Grupo');
-  let slide = $this.find('.slide-Imagem');
-  let botaoArray = [];
-  let indiceAtual = 0;
-  let contarTempo;
+  var $this = $(this);
+  var grupoSlide = $this.find('.slide-Grupo');
+  var slide = $this.find('.slide-Imagem');
+  var botaoArray = [];
+  var indiceAtual = 0;
+  var contarTempo;
 
   function moverSlide(newIndex) {
-    let animacaoEsquerda;
-    let slideEsquerda;
+    var animacaoEsquerda;
+    var slideEsquerda;
 
     avancar();
     //Se o ususario clicar no botao da mesma imagem apresentada na tela, nada acontece.
@@ -78,7 +78,7 @@ $('.slide').each(function () {
     }, 4000); //4 segundos
   }
   $.each(slide, function (index) {
-    let botao = $('<button type="button" class="slide-btn">&bull;</button>');
+    var botao = $('<button type="button" class="slide-btn">&bull;</button>');
     if (index === indiceAtual) {
       botao.addClass('active');
     }
@@ -95,17 +95,17 @@ $('.slide').each(function () {
 /*FILTRO DOS QUADRIHNOS*/
 (function () {
 
-  let quadrinhos = $('.ContainerFlex .produtos-Quadrinho'); //pegando cada div com os quadrinhos
+  var quadrinhos = $('.ContainerFlex .produtos-Quadrinho'); //pegando cada div com os quadrinhos
 
   //onde será armazenado os botoes
-  let botao = $('.flitro-Botao');
+  var botao = $('.flitro-Botao');
 
   armazenaTags = {};
 
   //vai contar quantos produtos existem e adicionar em um array
   quadrinhos.each(function () {
-    let $Hqs = this;
-    let tags = $(this).data('tags');
+    var $Hqs = this;
+    var tags = $(this).data('tags');
 
     if (tags) {
       tags.split(',').forEach(nomeTag => {
@@ -166,8 +166,8 @@ $('.Filtro').on('click', '.Series', function (e) {
 
 /*Ocultar as imagens que ficam superior a decima imagem*/
 function ocultarImagens() {
-  let contar = 20;
-  for (let i = 0; i < contar; i++) {
+  var contar = 20;
+  for (var i = 0; i < contar; i++) {
     if (i > 10 || i == 10) {
       $('.produtos-Quadrinho').eq(i).css({
         display: 'none'
@@ -180,11 +180,11 @@ ocultarImagens();
 /*Criei um media query, para que ao diminuir a tela do navagador (com as outras imagens ocultas),
 o total de imagens que o usuario vai ver serão 8, e não 10 imagens, 
 porque com 10 imagens a ultima fileira de imagens vai ficar incompleta*/
-let num = 0;
+var num = 0;
 function mediaSize() {
-  let contarImg = 10;
+  var contarImg = 10;
   if (window.matchMedia('(max-width: 960px)').matches) {
-    for (let a = 0; a < contarImg; a++) {
+    for (var a = 0; a < contarImg; a++) {
       if ((a > 8 || a == 8) && num == 0) {    //Para saber se o botao esta ativo ou não
 
         /*Oculta as duas imagens que ficam sobrando em uma fileira de 4 imagens cada*/
@@ -196,7 +196,7 @@ function mediaSize() {
   }
   else {
     /*Caso a tela for mais que 960px, as imagens voltam a aparecer*/
-    for (let a = 0; a < contarImg; a++) {
+    for (var a = 0; a < contarImg; a++) {
       $('.produtos-Quadrinho').eq(a).css({
         display: 'block'
       });
